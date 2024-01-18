@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippine Presidents Quiz</title>
+
+    <style>
+
+        body{
+            background-color: rgb(68, 68, 67);
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        .bayaniContainer {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 30px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+
+        }
+
+        .bayani {
+            position: relative;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px;
+            background-color: #808080;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            height: 1100px;
+            border-radius: 1px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+            filter: drop-shadow(0 10px 10px #0009);
+            overflow: hidden; 
+            
+
+
+
+        }
+
+       
+        .dropzone-box {
+            position: absolute;
+            top: 65%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: 50px;
+            border: 2px solid rgb(0, 0, 0);
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 110px; 
+            border-radius: 30px;
+            
+        }
+
+        .draggable {
+            width: 100px;
+            height: 50px;
+            background-color: #000000;
+            margin: 5px;
+            padding: 20px;
+            cursor: move;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            border-radius: 24px;
+            color: white;
+            border: 2px solid #000000; 
+            filter: drop-shadow(0 10px 10px #0009);
+            transition: background-color 0.3s ease; 
+}
+
+.draggable:hover {
+    background-color: #565656;
+}
+
+
+        
+
+        .draggableContainer {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            padding: 20px;
+            margin-top: 160px; 
+
+        }
+
+        .dropped-element {
+            background-color: #000000;
+
+            color: #ffffff;
+            border: none;
+            border-radius: 1px;
+            padding: 15px;
+            margin: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 50px;
+            font-weight: bold;
+        }
+
+      
+
+        .significance {
+    font-size: 20px;
+    margin-top: 80px;
+    position: absolute;
+    top: 70%;
+    bottom: 0;
+    width: 90%;
+    text-align: center;
+    padding-left: 0%;
+    text-indent: 0%;
+    color: white;
+    text-shadow: #000;
+    line-height: 1.8; 
+    background-color: #000000;
+    padding: 5px;
+    border-radius: 1px;
+    height: 45%;
+}
+
+.significance:hover {
+    margin-top: 70px; 
+}
+
+img {
+    object-fit: cover;
+    max-width: 90%;
+    max-height: none; 
+    display: block;
+    margin: 20px auto 30px; 
+    margin-bottom: 30px;
+    height: auto;
+    border-bottom: 1px solid #000000;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    width: 90%;
+    filter: drop-shadow(0 10px 10px #0009);
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    transform: scale(1.1);
+    outline: 4px solid #ffffff; 
+    filter: saturate(150%) contrast(120%); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+h1{
+
+              background-color: #000000;
+             color: white;
+            font-size: 36px; 
+            font-family: 'Arial';
+            text-align: center; 
+            margin: 20px 0; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            letter-spacing: 2px;
+            padding: 25px;
+            border-radius: 10px;
+            position: relative;
+            width: 100%;
+             z-index: 1000;
+             top: 0 ; 
+             font-size: 50px;
+             transition: transform 0.3s ease-in-out;
+
+             
+}
+h1:hover {
+    font-size: 20px; 
+}
+#dropzone-box-1{
+    top: 45%;
+}
+
+#dropzone-box-2{
+    top: 45%;
+
+}
+
+#dropzone-box-3{
+    top: 45%;
+
+}
+
+#dropzone-box-4{
+    top: 45%;
+
+}
+
+#dropzone-box-5{
+    top: 50%;
+
+}
+
+#dropzone-box-6{
+    top: 50%;
+
+}
+
+#dropzone-box-7{
+    top: 50%;
+
+}
+
+#dropzone-box-8{
+    top: 50%;
+
+}
+
+#dropzone-box-9{
+    top: 50%;
+
+}
+
+#dropzone-box-9{
+    top: 50%;
+
+}
+
+#dropzone-box-10{
+    top: 50%;
+
+}
+
+#dropzone-box-11{
+    top: 40%;
+
+}
+
+#dropzone-box-12{
+    top: 40%;
+
+}
+
+#section-1{
+    top: 45%;
+    line-height: 1.5em;
+    height: 46%;
+
+    
+}
+
+#section-2{
+    top: 45%;
+    line-height: 1.5em;
+    height: 46%;
+
+
+}
+
+#section-3{
+    top: 45%;
+    line-height: 1.5em;
+    font-size: 20px;
+    height: 46%;
+
+
+}
+
+#section-4{
+    top: 45%;
+    line-height: 1.5em;
+    height: 46%;
+
+
+}
+
+#section-5{
+    top: 50%;
+    line-height: 1.5em;
+    height: 41%;
+
+
+}
+
+#section-6{
+    top: 49%;
+    line-height: 1.5em;
+    height: 42%;
+
+
+}
+
+#section-7{
+    top: 50%;
+    line-height: 1.5em;
+    height: 41%;
+
+
+}
+
+#section-8{
+    top: 50%;
+    line-height: 1.5em;
+    height: 41%;
+
+    
+
+
+}
+
+#section-9{
+    top: 50%;
+    line-height: 1.5em;
+    height: 41%;
+
+
+}
+
+#section-10{
+    top: 50%;
+    line-height: 1.5em;
+    height: 41%;
+
+
+}
+
+#section-11{
+    top: 40%;
+    line-height: 1.5em;
+    height: 50%;
+
+
+}
+
+#section-12{
+    top: 40%;
+    line-height: 1.5em;
+    font-size: 21.5px;
+    height: 50%;
+
+
+}
+ 
+#section-13{
+    top: 40%;
+    line-height: 1.5em;
+    font-size: 22.5px;
+    height: 50%;
+
+
+}
+ 
+#section-14{
+    top: 43%;
+    line-height: 1.5em;
+    font-size: 22.5px;
+    height: 47%;
+
+
+
+}
+ 
+#section-15{
+    top: 50%;
+    line-height: 1.5em;
+    font-size: 22.5px;
+    height: 40%;
+
+
+
+}
+
+    </style>
+</head>
+
+<body>
+
+    <header class="fixed-header"><h1>Philippine's Presidents Quiz </h1></header>
+    <div class="draggableContainer">
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-1" style="width: 70%; height: 50px; ">Bongbong Marcos</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-2" style="width: 70%; height: 50px;">Rodrigo Duterte</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-3" style="width: 70%; height: 50px;">Benigno Aquino III</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-4" style="width: 70%; height: 50px;">Manuel L. Quezon</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-5" style="width: 70%; height: 50px;">Joseph Estrada</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-6" style="width: 70%; height: 50px;">Fidel V. Ramos</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-7" style="width: 70%; height: 50px;"> Corazon Aquino</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-8" style="width: 70%; height: 50px;">Ferdinand Marcos</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-9" style="width: 70%; height: 50px;">Diosdado Macapagal</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-10" style="width: 70%; height: 50px;">Carlos P. Garcia</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-11" style="width: 70%; height: 50px;">Ramon Magsaysay</div>
+        <div class="draggable" draggable="true" ondragstart="drag(event)" id="draggable-12" style="width: 70%; height: 50px;">Emilio Aguinaldo</div> 
+        
+    </div>
+
+    <div class="bayaniContainer">
+        <div class="bayani" id="bayani-1">
+            <img src="https://cdn.britannica.com/67/243867-050-49152639/Official-portrait-Ferdinand-Bongbong-Marcos-Jr.jpg" alt="">
+            <div class="dropzone-box" id="dropzone-box-1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance" id="section-1">
+                This Filipino politician, born on September 13, 1957, comes from a prominent political family. He has served in various government positions, including as a governor and a congressman. Known for his contributions to education and public service, he also ran for a higher national office but faced controversy. Despite his political lineage, opinions about him are divided, with some praising his achievements and others criticizing his family's historical connections. Can you guess who this mystery politician is?
+            </section>
+        </div>
+
+        
+        <div class="bayani" id="bayani-2">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/President_Rodrigo_Duterte_portrait_%28cropped%29.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance" id = "section-2">
+                This Filipino leader, born on March 28, 1945, gained popularity as a tough-talking mayor known for his unorthodox approach to governance. His strong stance on crime and corruption catapulted him into national prominence. Famous for his distinct speaking style and colorful language, he later ascended to the highest office in the country. Some applaud his no-nonsense leadership, while others criticize his controversial statements and policies. Can you identify this mystery leader?        </section>
+        </div>
+        
+        <div class="bayani" id="bayani-3">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Benigno_%22Noynoy%22_S._Aquino_III.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance"  id = "section-3">
+                This Filipino leader, often referred to by a nickname that means "Noynoy," served as the country's president from 2010 to 2016. Hailing from a prominent political family, he continued the legacy of his parents' fight for democracy. His presidency was marked by a focus on good governance, anti-corruption efforts, and economic growth. Recognized for his calm demeanor and dedication to public service, he left a significant impact on the nation's political landscape. Can you guess who this mystery leader is?</div>
+        <div class="bayani" id="bayani-4">
+            <img src="https://cdn.britannica.com/51/38551-050-D76BC2B2/Manuel-Quezon-Philippine-Commonwealth.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance"  id = "section-4">
+                This early 20th-century Filipino leader, recognized for his eloquence and vision, played a crucial role in shaping the nation's political landscape. Hailing from Baler, he was instrumental in the establishment of the Commonwealth and laid the groundwork for the country's path to independence. Known for his commitment to public service, he held a significant position during the American colonial period and is associated with the phrase "Social Justice." Can you identify this mystery leader?
+            </div>
+        <div class="bayani" id="bayani-5">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Joseph_Estrada_portrait.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance" id="section-5">
+                This charismatic Filipino leader, often recognized by a nickname that means "Friend," started his career in the entertainment industry before transitioning to politics. His presidency, which began in the late 20th century, was marked by populist appeal and efforts to address poverty. However, his term faced controversy, leading to his impeachment and a significant chapter in Philippine political history. Can you guess who this mystery leader is?</div>
+        <div class="bayani" id="bayani-6">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Fidel_Valdez_Ramos_Official_Photo_as_President_of_the_Philippines_%281995%29.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance"  id="section-6">
+                This former military general turned statesman, distinguished by his trademark sunglasses, played a pivotal role in the peaceful transition to democracy in the Philippines. Rising to the presidency in the early 1990s, his leadership focused on economic reforms, infrastructure development, and forging international relations. Under his administration, the country experienced stability and progress, marking a period of significant transformation. Can you identify this mystery leader?</section>        </div>
+        <div class="bayani" id="bayani-7">
+            <img src="https://martiallawmuseum.ph/wp-content/uploads/2017/09/cory.png" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance"id="section-7">
+                This influential Filipino leader, often associated with a color revolution, became the first female president of the Philippines. Widely known for her role in the People Power Revolution, she brought about democratic change and championed human rights. Her presidency followed a tumultuous period of authoritarian rule and marked a significant chapter in the nation's history. Can you guess who this mystery leader is?
+        </div>
+        <div class="bayani" id="bayani-8">
+            <img src="https://i.pinimg.com/736x/2c/34/3f/2c343f94d9c59d28d545382e801f7830.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance" id="section-8">
+                This controversial Filipino leader, recognized for his distinctive style and often seen in military-inspired attire, declared martial law during his presidency. His regime, marked by a long period of authoritarian rule, faced allegations of human rights abuses and corruption. Despite initiating infrastructure projects, his legacy is divisive, with critics pointing to the erosion of democratic institutions during his tenure. Can you guess who this mystery leader is?
+
+
+
+
+</section>        </div>
+        <div class="bayani" id="bayani-9">
+            <img src="https://jfk.artifacts.archives.gov/internal/media/dispatcher/9784/preview" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance" id="section-9">
+                This Filipino leader, known for his economic policies and land reform initiatives, served as president in the early 1960s. Originating from a humble background, he rose to prominence with a commitment to uplifting the common Filipino. His presidency aimed at modernizing the country's agricultural sector and promoting economic development. Can you identify this mystery leader?
+            </div>
+        <div class="bayani" id="bayani-10">
+            <img src="data:image/jpeg;base64,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" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+         
+            <section class = "significance"  id="section-10">
+                This Filipino president, often associated with the phrase "Filipino First," served in the late 1950s and was known for promoting nationalistic economic policies. Hailing from Bohol, his presidency emphasized prioritizing Filipino interests in trade and industry. His time in office marked efforts to strengthen the country's economic foundation and foster a sense of self-reliance. Can you guess who this mystery leader is? </section>
+            </div>
+        <div class="bayani" id="bayani-11">
+            <img src="https://www.officialgazette.gov.ph/images/uploads/08magsaysa.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-11" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance"  id="section-11">
+                This beloved Filipino leader, recognized for his simplicity and dedication to public service, served as president in the 1950s. Known for his "Man of the Masses" image, he implemented various reforms to combat corruption and improve government efficiency. His term focused on uplifting the lives of ordinary Filipinos, earning him widespread popularity. Can you guess who this mystery leader is?</section>
+            </div>
+        <div class="bayani" id="bayani-12">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Emilio_Aguinaldo_ca._1919_%28Restored%29.jpg/1200px-Emilio_Aguinaldo_ca._1919_%28Restored%29.jpg" alt="">
+
+            <div class="dropzone-box" id="dropzone-box-12" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <section class = "significance"  id="section-12">
+                This prominent Filipino leader, often associated with early 20th-century revolutionary movements, played a key role in the fight for Philippine independence. Hailing from Cavite, he became the first president of the First Philippine Republic and led efforts against colonial powers. Recognized for his role in the proclamation of Philippine independence, he later faced challenges in the complex political landscape of the time. Can you guess who this mystery leader is?</div>
+        
+    </div>
+
+    <script>
+        var scrollSpeed = 5;
+        var score = 12;
+    
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+    
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+            window.addEventListener('dragover', handleDragOver);
+        }
+    
+        function drop(event) {
+            event.preventDefault();
+            window.removeEventListener('dragover', handleDragOver);
+    
+            var data = event.dataTransfer.getData("text");
+            var draggedElement = document.getElementById(data);
+            var dropzone = event.target.closest('.bayani');
+            var dropzoneBox = dropzone.querySelector('.dropzone-box');
+    
+            if (dropzoneBox.querySelector('.dropped-element')) {
+                alert("Dropzone already contains an element!");
+            } else {
+                var dropzoneStyle = getComputedStyle(dropzoneBox);
+    
+                var newElement = document.createElement('div');
+                newElement.innerHTML = draggedElement.innerHTML;
+    
+                newElement.style.width = dropzoneStyle.width;
+                newElement.style.height = dropzoneStyle.height;
+                newElement.style.borderRadius = dropzoneStyle.borderRadius;
+                newElement.style.padding = dropzoneStyle.padding;
+                newElement.style.margin = dropzoneStyle.margin;
+    
+                newElement.classList.add('dropped-element');
+    
+          
+                newElement.style.fontSize = "24px";
+    
+                dropzoneBox.innerHTML = '';
+                dropzoneBox.appendChild(newElement);
+    
+                draggedElement.remove();
+
+               if (data === "draggable-2" && dropzone.id !== "bayani-5") {
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                   
+                    
+
+                }else if(data == "draggable-1" && dropzone.id !== "bayani-2"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+                    
+
+
+
+                }else if(data == "draggable-3" && dropzone.id !== "bayani-8"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+
+                }else if(data == "draggable-4" && dropzone.id !== "bayani-11"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+
+                }else if(data == "draggable-5" && dropzone.id !== "bayani-14"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                 } else if(data == "draggable-6" && dropzone.id !== "bayani-1"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                } else if(data == "draggable-7" && dropzone.id !== "bayani-6"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                }else if(data == "draggable-8" && dropzone.id !== "bayani-7"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+                }
+
+                else if(data == "draggable-9" && dropzone.id !== "bayani-10"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                }else if(data == "draggable-10" && dropzone.id !== "bayani-15"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                }else if(data == "draggable-11" && dropzone.id !== "bayani-3"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+
+                }else if(data == "draggable-12" && dropzone.id !== "bayani-4"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                } else if(data == "draggable-13" && dropzone.id !== "bayani-9"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+                }else if(data == "draggable-14" && dropzone.id !== "bayani-12"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone);
+
+
+
+                }else if(data == "draggable-15" && dropzone.id !== "bayani-13"){
+                    score -= 1;
+                    applyIncorrectPlacementStyle(dropzone );
+
+                }
+
+                else{
+                    applyCorrectPlacementStyle(dropzone);
+                    
+                }
+
+                document.getElementById('score').innerText = "Score: " + score;
+
+                
+            }
+        }
+        function applyIncorrectPlacementStyle(dropzone) {
+    dropzone.style.boxShadow = "0 0 20px #ff8e8e"; 
+   
+}
+
+function applyCorrectPlacementStyle(dropzone) {
+    dropzone.style.boxShadow = "0 0 20px #00ff00"; 
+}
+    
+        function handleDragOver(event) {
+            var mouseY = event.clientY;
+            var scrollSpeed = 10;
+    
+            if (mouseY < 100) {
+                window.scrollBy(0, -scrollSpeed);
+            } else if (mouseY > window.innerHeight - 100) {
+                window.scrollBy(0, scrollSpeed);
+            }
+        }
+
+        
+        
+    </script>
+    
+    
+    
+</body>
+
+</html>
